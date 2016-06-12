@@ -1,0 +1,51 @@
+(function() {
+  describe('helpers', function() {
+    var helpers;
+    helpers = require('../lib/helpers');
+    beforeEach(function() {
+      return atom.notifications.clear();
+    });
+    describe('::error', function() {
+      return it('adds an error notification', function() {
+        helpers.error(new Error());
+        return expect(atom.notifications.getNotifications().length).toBe(1);
+      });
+    });
+    return describe('::shouldTriggerLinter', function() {
+      var bufferModifying, lintOnFly, normalLinter;
+      normalLinter = {
+        grammarScopes: ['*'],
+        scope: 'file',
+        lintOnFly: false,
+        lint: function() {}
+      };
+      lintOnFly = {
+        grammarScopes: ['*'],
+        scope: 'file',
+        lintOnFly: true,
+        lint: function() {}
+      };
+      bufferModifying = {
+        grammarScopes: ['*'],
+        scope: 'file',
+        lintOnFly: false,
+        lint: function() {}
+      };
+      it('accepts a wildcard grammarScope', function() {
+        return expect(helpers.shouldTriggerLinter(normalLinter, false, ['*'])).toBe(true);
+      });
+      it('runs lintOnFly ones on both save and lintOnFly', function() {
+        expect(helpers.shouldTriggerLinter(lintOnFly, false, ['*'])).toBe(true);
+        return expect(helpers.shouldTriggerLinter(lintOnFly, true, ['*'])).toBe(true);
+      });
+      return it("doesn't run save ones on fly", function() {
+        return expect(helpers.shouldTriggerLinter(normalLinter, true, ['*'])).toBe(false);
+      });
+    });
+  });
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiL1VzZXJzL3ZtYXVkZ2FseWEvLmF0b20vcGFja2FnZXMvbGludGVyL3NwZWMvaGVscGVycy1zcGVjLmNvZmZlZSIKICBdLAogICJuYW1lcyI6IFtdLAogICJtYXBwaW5ncyI6ICJBQUFBO0FBQUEsRUFBQSxRQUFBLENBQVMsU0FBVCxFQUFvQixTQUFBLEdBQUE7QUFDbEIsUUFBQSxPQUFBO0FBQUEsSUFBQSxPQUFBLEdBQVUsT0FBQSxDQUFRLGdCQUFSLENBQVYsQ0FBQTtBQUFBLElBQ0EsVUFBQSxDQUFXLFNBQUEsR0FBQTthQUNULElBQUksQ0FBQyxhQUFhLENBQUMsS0FBbkIsQ0FBQSxFQURTO0lBQUEsQ0FBWCxDQURBLENBQUE7QUFBQSxJQUlBLFFBQUEsQ0FBUyxTQUFULEVBQW9CLFNBQUEsR0FBQTthQUNsQixFQUFBLENBQUcsNEJBQUgsRUFBaUMsU0FBQSxHQUFBO0FBQy9CLFFBQUEsT0FBTyxDQUFDLEtBQVIsQ0FBa0IsSUFBQSxLQUFBLENBQUEsQ0FBbEIsQ0FBQSxDQUFBO2VBQ0EsTUFBQSxDQUFPLElBQUksQ0FBQyxhQUFhLENBQUMsZ0JBQW5CLENBQUEsQ0FBcUMsQ0FBQyxNQUE3QyxDQUFvRCxDQUFDLElBQXJELENBQTBELENBQTFELEVBRitCO01BQUEsQ0FBakMsRUFEa0I7SUFBQSxDQUFwQixDQUpBLENBQUE7V0FTQSxRQUFBLENBQVMsdUJBQVQsRUFBa0MsU0FBQSxHQUFBO0FBQ2hDLFVBQUEsd0NBQUE7QUFBQSxNQUFBLFlBQUEsR0FDRTtBQUFBLFFBQUEsYUFBQSxFQUFlLENBQUMsR0FBRCxDQUFmO0FBQUEsUUFDQSxLQUFBLEVBQU8sTUFEUDtBQUFBLFFBRUEsU0FBQSxFQUFXLEtBRlg7QUFBQSxRQUdBLElBQUEsRUFBTSxTQUFBLEdBQUEsQ0FITjtPQURGLENBQUE7QUFBQSxNQUtBLFNBQUEsR0FDRTtBQUFBLFFBQUEsYUFBQSxFQUFlLENBQUMsR0FBRCxDQUFmO0FBQUEsUUFDQSxLQUFBLEVBQU8sTUFEUDtBQUFBLFFBRUEsU0FBQSxFQUFXLElBRlg7QUFBQSxRQUdBLElBQUEsRUFBTSxTQUFBLEdBQUEsQ0FITjtPQU5GLENBQUE7QUFBQSxNQVVBLGVBQUEsR0FDRTtBQUFBLFFBQUEsYUFBQSxFQUFlLENBQUMsR0FBRCxDQUFmO0FBQUEsUUFDQSxLQUFBLEVBQU8sTUFEUDtBQUFBLFFBRUEsU0FBQSxFQUFXLEtBRlg7QUFBQSxRQUdBLElBQUEsRUFBTSxTQUFBLEdBQUEsQ0FITjtPQVhGLENBQUE7QUFBQSxNQWVBLEVBQUEsQ0FBRyxpQ0FBSCxFQUFzQyxTQUFBLEdBQUE7ZUFDcEMsTUFBQSxDQUFPLE9BQU8sQ0FBQyxtQkFBUixDQUE0QixZQUE1QixFQUEwQyxLQUExQyxFQUFpRCxDQUFDLEdBQUQsQ0FBakQsQ0FBUCxDQUErRCxDQUFDLElBQWhFLENBQXFFLElBQXJFLEVBRG9DO01BQUEsQ0FBdEMsQ0FmQSxDQUFBO0FBQUEsTUFpQkEsRUFBQSxDQUFHLGdEQUFILEVBQXFELFNBQUEsR0FBQTtBQUNuRCxRQUFBLE1BQUEsQ0FBTyxPQUFPLENBQUMsbUJBQVIsQ0FBNEIsU0FBNUIsRUFBdUMsS0FBdkMsRUFBOEMsQ0FBQyxHQUFELENBQTlDLENBQVAsQ0FBNEQsQ0FBQyxJQUE3RCxDQUFrRSxJQUFsRSxDQUFBLENBQUE7ZUFDQSxNQUFBLENBQU8sT0FBTyxDQUFDLG1CQUFSLENBQTRCLFNBQTVCLEVBQXVDLElBQXZDLEVBQTZDLENBQUMsR0FBRCxDQUE3QyxDQUFQLENBQTJELENBQUMsSUFBNUQsQ0FBaUUsSUFBakUsRUFGbUQ7TUFBQSxDQUFyRCxDQWpCQSxDQUFBO2FBb0JBLEVBQUEsQ0FBRyw4QkFBSCxFQUFtQyxTQUFBLEdBQUE7ZUFDakMsTUFBQSxDQUFPLE9BQU8sQ0FBQyxtQkFBUixDQUE0QixZQUE1QixFQUEwQyxJQUExQyxFQUFnRCxDQUFDLEdBQUQsQ0FBaEQsQ0FBUCxDQUE4RCxDQUFDLElBQS9ELENBQW9FLEtBQXBFLEVBRGlDO01BQUEsQ0FBbkMsRUFyQmdDO0lBQUEsQ0FBbEMsRUFWa0I7RUFBQSxDQUFwQixDQUFBLENBQUE7QUFBQSIKfQ==
+
+//# sourceURL=/Users/vmaudgalya/.atom/packages/linter/spec/helpers-spec.coffee
