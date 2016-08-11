@@ -1,6 +1,17 @@
 # dotfiles
 Settings and Productivity Boosts
 
+#### Shell
+[zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+#### Package Managers
+[brew](http://brew.sh/)
+
+`brew install python; brew install vim` # for pip and vim 7.4
+
+
+
+
 #### Atom
 ```
 predawn-syntax
