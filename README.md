@@ -7,7 +7,7 @@ Settings and Productivity Boosts
 #### Package Managers
 [brew](http://brew.sh/)
 
-`brew install python; brew install vim` # for pip and vim 7.4
+`brew install python; brew install vim # for pip and vim 7.4`
 
 
 
