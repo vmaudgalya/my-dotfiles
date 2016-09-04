@@ -10,12 +10,7 @@ Settings and Productivity Boosts
 `brew install python; brew install vim; brew install tmux #pip, vim7.4, tmux`
 
 
-#### Atom
-```
-predawn-syntax
-predawn-ui
-atom-dark
-```
+
 
 #### Productivity
 [Make Your Address Bar Default to I'm Feeling Lucky](https://productforums.google.com/forum/#!topic/chrome/8FS4pYxfxj0)
