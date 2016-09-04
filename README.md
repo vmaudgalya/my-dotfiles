@@ -7,8 +7,16 @@ Settings and Productivity Boosts
 #### Package Managers
 [brew](http://brew.sh/)
 
-`brew install python; brew install vim; brew install tmux #pip, vim7.4, tmux`
+`brew install python; brew install tmux #pip, tmux`
 
+### Vim
+`export PATH=/usr/local/bin:$PATH`
+
+`brew update`
+
+`brew install vim && brew install macvim`
+
+`brew link macvim`
 
 
 
