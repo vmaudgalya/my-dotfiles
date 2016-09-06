@@ -1,0 +1,76 @@
+export DOTFILES=$HOME/.my-dotfiles
+export ZSH=$DOTFILES/zsh
+
+# display how long all tasks over 10 seconds take
+export REPORTTIME=10
+
+# Load any terminfo setup
+[[ -e ~/.terminfo ]] && export TERMINFO_DIRS=~/.terminfo:/usr/share/terminfo
+
+# define the code directory
+# This is where my code exists and where I want the `c` autocomplete to work from exclusively
+if [[ -d ~/code ]]; then
+    export CODE_DIR=~/code
+fi
+
+# source all .zsh files inside of the zsh/ directory
+for config ($ZSH/**/*.zsh) source $config
+
+# source a ~/.localrc if it exists so 
+# that additional configurations can be made that won't 
+# be kept track of in this dotfiles repo. This is good for things like API keys, etc.
+if [[ -a ~/.localrc ]]; then
+    source ~/.localrc
+fi
+
+# initialize autocomplete
+autoload -U compinit add-zsh-hook
+compinit
+
+export EDITOR='vim'
+
+export PATH=/usr/local/bin:$PATH
+
+# add /usr/local/sbin
+if [[ -d /usr/local/sbin ]]; then
+    export PATH=/usr/local/sbin:$PATH
+fi
+
+# adding path directory for custom scripts
+export PATH=$DOTFILES/bin:$PATH
+
+# check for custom bin directory and add to path
+if [[ -d ~/bin ]]; then
+    export PATH=~/bin:$PATH
+fi
+
+[ -z "$TMUX" ] && export TERM=xterm-256color-italic
+
+# source nvm
+export NVM_DIR=~/.nvm
+
+load-nvmrc() {
+    if [[ -f .nvmrc && -r .nvmrc ]]; then
+        nvm use
+    fi
+}
+add-zsh-hook chpwd load-nvmrc
+
+if hash brew 2>/dev/null; then
+    source $(brew --prefix nvm)/nvm.sh
+    source `brew --prefix`/etc/profile.d/z.sh
+    # when sourcing, check and ensure that the correct Node version is set
+    load-nvmrc
+
+fi
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -z ${DOTFILES_LOADED+x} ]; then
+    # install zsh-syntax-highlighting
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # install zsh autosuggestions
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+DOTFILES_LOADED=1

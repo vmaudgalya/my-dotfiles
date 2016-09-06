@@ -1,22 +1,28 @@
-# dotfiles
-Settings and Productivity Boosts
+my-dotfiles
+===========
+> Scripted dev environment setup
 
-#### Shell
-[zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-#### Package Managers
-[brew](http://brew.sh/)
+### Instructions
+`bash install.sh` to set up
 
-`brew install python; brew install tmux #pip, tmux`
+#### Issues
+You may need to add zsh to /etc/shells
 
-### Vim
-`export PATH=/usr/local/bin:$PATH`
+`echo /usr/local/bin/zsh >> /etc/shells`
 
-`brew update`
+Make sure to add files in `resources` to the TERM database
 
-`brew install vim && brew install macvim`
+`tic xterm-256color-italic.terminfo`
 
-`brew link macvim`
+`tic tmux-256color-italic.terminfo`
+
+This needs to be set in iTerm:
+
+1. Preferences
+2. Profiles
+3. Click Terminal
+4. Report Terminal Type: xterm-256color-italic
 
 
 
@@ -29,6 +35,3 @@ Settings and Productivity Boosts
 
 [Newsfeed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en)
 
-[Imagus](https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab?hl=en)
-
-Postman - Use the native app
