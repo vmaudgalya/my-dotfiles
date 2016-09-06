@@ -20,6 +20,13 @@ alias ll="ls -lFh ${colorflag}"
 alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
 
+# git aliases
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push -u origin master'
+alias gd='git diff --color | diff-so-fancy'
+alias gs='git status'
+
 # Helpers
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
