@@ -14,3 +14,20 @@ for file in $linkables ; do
         ln -s $file $target
     fi
 done
+
+# Because associative arrays don't exist in Bash 3
+echo -e "\n\nCreating vim symlinks"
+echo "=============================="
+ARRAY=( "$HOME/.vim:$DOTFILES/vim/.vim"
+        "$HOME/.vimrc:$DOTFILES/vim/.vimrc" )
+
+for file in "${ARRAY[@]}" ; do
+    KEY=${file%%:*}
+    VALUE=${file#*:}
+    if [ -e ${KEY} ]; then
+        echo "${KEY} already exists... skipping"
+    else
+        echo "Creating symlink for $KEY"
+        ln -s ${VALUE} ${KEY}
+    fi
+done

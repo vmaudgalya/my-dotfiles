@@ -6,6 +6,9 @@ my-dotfiles
 ### Instructions
 `bash install.sh` to set up
 
+`vim +PlugInstall` the first time you open vim
+
+
 #### Issues
 You may need to add zsh to /etc/shells
 
