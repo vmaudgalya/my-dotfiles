@@ -38,3 +38,6 @@ This needs to be set in iTerm:
 
 [Newsfeed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en)
 
+
+#### Thank You
+Heavily inspired by [@nicknisi](https://github.com/nicknisi/dotfiles)
