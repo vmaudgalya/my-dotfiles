@@ -8,12 +8,11 @@ my-dotfiles
 
 `vim +PlugInstall` the first time you open vim
 
+Add zsh to /etc/shells
+
+`sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
 
 #### Issues
-You may need to add zsh to /etc/shells
-
-`echo /usr/local/bin/zsh >> /etc/shells`
-
 Make sure to add files in `resources` to the TERM database
 
 `tic xterm-256color-italic.terminfo`
