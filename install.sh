@@ -16,6 +16,10 @@ fi
 # echo "creating vim directories"
 # mkdir -p ~/.vim-tmp
 
+echo "Adding terminfo files to TERM database"
+tic resources/xterm-256color-italic.terminfo
+tic resources/tmux-256color-italic.terminfo
+
 echo "Adding zsh to list of valid login shells"
 sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 

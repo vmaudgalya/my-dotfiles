@@ -8,16 +8,18 @@ my-dotfiles
 
 `vim +PlugInstall` the first time you open vim
 
-Add zsh to /etc/shells
+
+#### Issues?
+Make sure that zsh is added to /etc/shells. If not, run:
 
 `sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
 
-#### Issues
+
 Make sure to add files in `resources` to the TERM database
 
 `tic xterm-256color-italic.terminfo`
 
-`tic tmux-256color-italic.terminfo`
+`tic tmux-256color-italic.terminfo # This may need to be done in tmux`
 
 This needs to be set in iTerm:
 
