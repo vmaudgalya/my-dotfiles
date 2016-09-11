@@ -16,6 +16,8 @@ fi
 # echo "creating vim directories"
 # mkdir -p ~/.vim-tmp
 
+echo "Adding zsh to list of valid login shells"
+sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)
