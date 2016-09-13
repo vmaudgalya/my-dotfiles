@@ -15,7 +15,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-let mapleader = ' '
+let mapleader=' '
+
+let NERDSpaceDelims=1
 
 call plug#begin('~/.vim/plugged')
 " Add plugins to &runtimepath
