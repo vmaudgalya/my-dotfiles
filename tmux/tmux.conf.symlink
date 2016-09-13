@@ -74,8 +74,8 @@ setw -g mode-keys vi
 # more settings to make copy-mode more vim-like
 # unbind [
 # bind Escape copy-mode
-unbind p
-bind p paste-buffer
+# unbind p
+# bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
 
