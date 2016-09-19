@@ -29,7 +29,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 
 " Fuzzy file
-Plug 'kien/ctrlp.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " Repeatable Plugin commands
 Plug 'tpope/vim-repeat'
