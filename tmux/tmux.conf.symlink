@@ -28,6 +28,9 @@ bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 # quickly open a new window
 bind N new-window
 
+# clear scrollback history
+bind -n C-k clear-history
+
 # split window and fix path for tmux 1.9
 # bind | split-window -h -c "#{pane_current_path}"
 # bind - split-window -v -c "#{pane_current_path}"
