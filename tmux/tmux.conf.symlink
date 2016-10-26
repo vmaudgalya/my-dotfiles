@@ -71,6 +71,10 @@ setw -g mouse on
 # bind Up new-window -d -n fullscreen \; swap-pane -s fullscreen.1 \; select-window -t fullscreen
 # unbind Down
 # bind Down last-window \; swap-pane -s fullscreen.1 \; kill-window -t fullscreen
+#
+# move current window to left/right by 1
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
 
 # set vi mode for copy mode
 setw -g mode-keys vi
