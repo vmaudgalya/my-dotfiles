@@ -9,3 +9,5 @@
 # ignore directories
 --ignore-dir=node_modules
 
+--type-set=jsx=.jsx
+--type-set=js=.js,.jsx
