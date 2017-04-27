@@ -5,7 +5,7 @@ set -g default-terminal "tmux-256color-italic"
 set -g history-limit 20000
 
 # automatically renumber tmux windows
-set -g renumber-windows on
+# set -g renumber-windows on
 
 # make delay shorter
 set -sg escape-time 0
@@ -54,7 +54,7 @@ bind -r K resize-pane -U 10
 bind -r L resize-pane -R 10
 
 # enable mouse support for switching panes/windows
-setw -g mouse on
+# setw -g mouse on
 set-option -g mouse-select-pane on
 # set-option -g -q mouse on
 
