@@ -29,6 +29,7 @@ alias gc='git commit -m'
 alias gp='git push -u origin master'
 alias gd='git diff --color | diff-so-fancy'
 alias gs='git status'
+alias gpl='git pull --rebase origin master'
 
 # Helpers
 alias grep='grep --color=auto'
