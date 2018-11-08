@@ -87,4 +87,7 @@ export PATH="/Library/TeX/texbin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=fxfxcxdxbxegedabagacad
 
+# Change the globbing color to magenta
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=magenta,bold
+
 DOTFILES_LOADED=1
