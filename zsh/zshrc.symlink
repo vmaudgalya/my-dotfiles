@@ -73,4 +73,18 @@ if [ -z ${DOTFILES_LOADED+x} ]; then
     source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Add system python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Add pyenv to deal with 2.7.x and 3.6.x
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Add xelatex (after installing mactex)
+export PATH="/Library/TeX/texbin:$PATH"
+
+# Change directory colors to magenta (instead of that awful blue)
+export CLICOLOR=1
+export LSCOLORS=fxfxcxdxbxegedabagacad
+
 DOTFILES_LOADED=1
