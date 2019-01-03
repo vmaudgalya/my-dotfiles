@@ -1,32 +1,39 @@
 my-dotfiles
 ===========
-> Scripted dev environment setup
+> This is a script which will set up your entire development environment on a new machine.
+> The purpose is to accelerate development time with the same look, feel and tools needed
+> to be extremely productive, as quickly as possible.
 
 
 ### Instructions
 `bash install.sh` to set up
-
 `vim +PlugInstall` the first time you open vim
 
 
 #### Issues?
 Make sure that zsh is added to /etc/shells. If not, run:
-
 `sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
 
 
 Make sure to add files in `resources` to the TERM database
-
 `tic xterm-256color-italic.terminfo`
-
 `tic tmux-256color-italic.terminfo # This may need to be done in tmux`
 
-This needs to be set in iTerm:
+#### Manual Assembly Required
 
+This needs to be set in iTerm:
 1. Preferences
 2. Profiles
 3. Click Terminal
 4. Report Terminal Type: xterm-256color-italic
+
+Set up Git:
+```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```
+
+You may need to source all dotfiles (you can do this using `reload!`) and restart iTerm for changes to take effect.
 
 
 
@@ -35,9 +42,7 @@ This needs to be set in iTerm:
 
 [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en)
 
-[uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
-
-[Newsfeed Eradicator](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en)
+[Aerial Screensavers](https://github.com/JohnCoates/Aerial)
 
 
 #### Thank You
