@@ -23,7 +23,7 @@ call plug#begin('~/.vim/plugged')
 " Add plugins to &runtimepath
 
 " Syntax checker
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 " Quoting/Parenthesizing made easy
 Plug 'tpope/vim-surround'
