@@ -77,8 +77,9 @@ fi
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Add pyenv to deal with 2.7.x and 3.6.x
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+export PATH="/Users/vmaudgalya/anaconda3/bin:$PATH"
 
 # Add xelatex (after installing mactex)
 export PATH="/Library/TeX/texbin:$PATH"
