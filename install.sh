@@ -9,8 +9,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     source install/brew.sh
 
-    source install/nvm.sh
-
 fi
 
 # echo "creating vim directories"

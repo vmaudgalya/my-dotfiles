@@ -11,18 +11,14 @@ echo "=============================="
 # cli tools
 brew install ack
 brew install tree
-brew install wget
 
 # development tools
-brew install nvm
 brew install fzf
-brew install macvim --override-system-vim
+brew install macvim --with-override-system-vim
 brew install reattach-to-user-namespace
 brew install tmux
 brew install zsh
-brew install highlight
 brew install z
-brew install pandoc
 brew install diff-so-fancy
 brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
