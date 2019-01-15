@@ -46,6 +46,12 @@ fi
 
 [ -z "$TMUX" ] && export TERM=xterm-256color-italic
 
+
+# Source z
+if hash brew 2>/dev/null; then
+    source `brew --prefix`/etc/profile.d/z.sh
+fi
+
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [ -z ${DOTFILES_LOADED+x} ]; then
