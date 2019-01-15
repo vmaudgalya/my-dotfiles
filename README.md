@@ -6,14 +6,15 @@ my-dotfiles
 
 
 ### Instructions
-`bash install.sh` to set up
-`vim +PlugInstall` the first time you open vim
+```sh
+git clone git@github.com:vmaudgalya/my-dotfiles.git .my-dotfiles
+bash install.sh  # Run install script
+vim +PlugInstall # First time you open vim
+```
 
-
-#### Issues?
+#### Any issues?
 Make sure that zsh is added to /etc/shells. If not, run:
 `sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
-
 
 Make sure to add files in `resources` to the TERM database
 `tic xterm-256color-italic.terminfo`
@@ -35,9 +36,14 @@ git config --global user.email johndoe@example.com
 
 You may need to source all dotfiles (you can do this using `reload!`) and restart iTerm for changes to take effect.
 
+#### TODO
+- [ ] Automatically set up Git (SSH keygen, name, username)
+
 
 
 #### Productivity
+[iTerm macOS Terminal Replacement](https://www.iterm2.com/downloads.html)
+
 [Make Your Address Bar Default to I'm Feeling Lucky](https://productforums.google.com/forum/#!topic/chrome/8FS4pYxfxj0)
 
 [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en)
