@@ -10,6 +10,7 @@ my-dotfiles
 git clone git@github.com:vmaudgalya/my-dotfiles.git .my-dotfiles
 bash install.sh  # Run install script
 vim +PlugInstall # First time you open vim
+chsh -s $(which zsh)
 ```
 
 #### Any issues?
@@ -38,6 +39,8 @@ You may need to source all dotfiles (you can do this using `reload!`) and restar
 
 #### TODO
 - [ ] Automatically set up Git (SSH keygen, name, username)
+- [ ] Move change shell command to end of script
+- [ ] Add terminal colors to term database after change shell cmd
 
 
 
