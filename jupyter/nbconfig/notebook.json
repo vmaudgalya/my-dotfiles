@@ -2,14 +2,21 @@
   "keys": {
     "command": {
       "bind": {
-        "cmd-r": "jupyter-notebook:restart-kernel-and-run-all-cells", 
-        "cmd-shift-r": "jupyter-notebook:restart-kernel-and-run-all-cells", 
-        "alt-enter": "jupyter-notebook:restart-kernel-and-run-all-cells", 
+        "cmd-r": "jupyter-notebook:restart-kernel-and-run-all-cells",
+        "cmd-shift-r": "jupyter-notebook:restart-kernel-and-run-all-cells",
         "cmd-l": "jupyter-notebook:restart-kernel-and-run-all-cells"
-      }
+      },
+      "unbind": [
+        "alt-enter",
+        "r",
+        "h"
+      ]
     }
-  }, 
+  },
   "Notebook": {
     "Header": true
+  },
+  "load_extensions": {
+    "/Users/vmaudgalya/Library/Jupyter/nbextensions/vim_binding/vim_binding": true
   }
 }

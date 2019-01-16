@@ -11,10 +11,10 @@ a hack to deal with our current css styles and no new styling should be added in
 /* div#notebook {background-color: #1e1e1e; border-top: none;} */
 
 /* Varun edits below */
-div.input_area {
+div.input_area, .CodeMirror {
     background-color: #262626
 }
-.cm-s-ipython span.cm-variable {
+.cm-s-ipython span.cm-variable, .cm-s-ipython span.cm-variable-2 {
     color: #FFFFFF
 }
 .cm-s-ipython span.cm-property {
@@ -42,13 +42,36 @@ div.input_area {
 .cm-s-ipython span.cm-string {
     color: #BDDCDC
 }
-.cm-s-ipython .CodeMirror-cursor {
+div.CodeMirror-cursor {
     border-left: 1px solid #FFFFFF !important;
 }
-.cm-s-ipython div.CodeMirror-code {
+.cm-s-ipython div.CodeMirror-code, .cm-bracket, .cm-tag {
     color: #FFFFFF /*For commas, periods, brackets*/
 }
 div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt {
     font-family: 'monaco';
+}
+
+div.CodeMirror {
+    color: #FFFFFF
+}
+
+/* For Markdown Area */
+/* Headers */
+.cm-s-default .cm-header {
+    color: lightgreen
+}
+/* Links */
+.cm-s-default .cm-link {
+    color: lightskyblue
+}
+/* Link text */
+.cm-s-default .cm-string {
+    color: lightcoral
+}
+
+/* Tags (symbols, like \nabla) */
+.cm-s-default .cm-tag {
+    color: #F49D62
 }
 
