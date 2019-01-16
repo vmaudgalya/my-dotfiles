@@ -52,7 +52,14 @@ Generate SSH keys for machine [GitHub Instructions](https://help.github.com/arti
 You may need to source all dotfiles (you can do this using `reload!`) and restart iTerm for changes to take effect.
 
 #### Jupyter
-> If you use Jupyter and would like my custom configuration, copy everything in the `jupyter` folder inside /Users/$username/.jupyter/custom/
+If you use Jupyter Notebooks and would like my custom configuration:
+```
+#  Create ~/.jupyter/ config if you don't already have one
+jupyter notebook --generate-config 
+
+# Copy configuration from jupyter folder inside generated jupyter dotfiles
+cp -R ~/.my-dotfiles/jupyter/* ~/.jupyter/
+```
 
 ----------------------------------------------
 
