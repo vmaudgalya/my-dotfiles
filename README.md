@@ -57,6 +57,18 @@ If you use Jupyter Notebooks and would like my custom configuration:
 #  Create ~/.jupyter/ config if you don't already have one
 jupyter notebook --generate-config 
 
+######################
+# Set up Jupyter vim-binding
+# Note: Last tested with version https://github.com/lambdalisue/jupyter-vim-binding/tree/c9822c753b6acad8b1084086d218eb4ce69950e9
+######################
+## Create required directory in case (optional)
+mkdir -p $(jupyter --data-dir)/nbextensions
+## Clone the repository
+cd $(jupyter --data-dir)/nbextensions
+git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding
+## Activate the extension
+jupyter nbextension enable vim_binding/vim_binding
+
 # Copy configuration from jupyter folder inside generated jupyter dotfiles
 cp -R ~/.my-dotfiles/jupyter/* ~/.jupyter/
 ```
