@@ -15,6 +15,9 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" Text over 80 column limit is highlighted in red
+set colorcolumn=100
+
 let mapleader=' '
 
 let NERDSpaceDelims=1
