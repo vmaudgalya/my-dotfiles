@@ -67,7 +67,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Add pyenv to deal with 2.7.x and 3.6.x
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
-export PATH="/Users/vmaudgalya/anaconda3/bin:$PATH"
+# export PATH="/Users/vmaudgalya/anaconda3/bin:$PATH"  # commented out by conda initialize
 
 # Add xelatex (after installing mactex)
 export PATH="/Library/TeX/texbin:$PATH"
@@ -80,3 +80,20 @@ export LSCOLORS=fxfxcxdxbxegedabagacad
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=magenta,bold
 
 DOTFILES_LOADED=1
+# export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/vmaudgalya/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/vmaudgalya/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/vmaudgalya/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/vmaudgalya/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

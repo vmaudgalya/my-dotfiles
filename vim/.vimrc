@@ -22,6 +22,11 @@ let mapleader=' '
 
 let NERDSpaceDelims=1
 
+" Ignore long line error for Python
+" let g:syntastic_python_flake8_args='--ignore=E501'
+" let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
+let g:ale_python_flake8_options='--ignore=E501'
+
 call plug#begin('~/.vim/plugged')
 " Add plugins to &runtimepath
 

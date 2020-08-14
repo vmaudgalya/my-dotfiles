@@ -44,7 +44,8 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
-tm_tunes="#[fg=$tm_color_music]#(osascript ~/.my-dotfiles/applescripts/tunes.scpt)"
+# tm_tunes="#[fg=$tm_color_music]#(osascript ~/.my-dotfiles/applescripts/tunes.scpt)"
+tm_tunes="#[fg=$tm_color_music]#(osascript -l JavaScript ~/.my-dotfiles/applescripts/tunes.js)"
 tm_battery="#(~/.my-dotfiles/bin/battery_indicator.sh)"
 
 tm_date="#[fg=$tm_color_inactive] %R %d %b"
