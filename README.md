@@ -18,17 +18,6 @@ vim +PlugInstall
 # If you shell isn't automatically changed, run the following:
 chsh -s $(which zsh)
 ```
-----------------------------------------------
-
-### Issues?
-Make sure that zsh is added to /etc/shells. If not, run:
-`sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
-
-Make sure to add files in `resources` to the TERM database
-```sh
-tic xterm-256color-italic.terminfo
-tic tmux-256color-italic.terminfo
-```
 
 ----------------------------------------------
 
@@ -39,7 +28,23 @@ Set terminal colors in iTerm:
 1. Preferences
 2. Profiles
 3. Click Terminal
-4. Report Terminal Type: xterm-256color-italic
+4. Change the "Report Terminal Type" to: xterm-256color-italic
+
+----------------------------------------------
+
+### Debugging Issues
+Make sure that zsh is added to /etc/shells. If not, run:
+`sudo bash -c "echo /usr/local/bin/zsh >> /etc/shells"`
+
+If you get an error related to the terminal being unable to find xterm/tmux color themes, make sure to add files in `resources` to the TERM database by running:
+```sh
+tic xterm-256color-italic.terminfo
+tic tmux-256color-italic.terminfo
+```
+
+There may be errors during Homebrew package installation. This is expected, and each error will display an accompanying fix.
+
+----------------------------------------------
 
 #### Git
 Set global username and email using Git:
@@ -50,6 +55,8 @@ git config --global user.email johndoe@example.com
 Generate SSH keys for machine [GitHub Instructions](https://help.github.com/articles/connecting-to-github-with-ssh/)
 
 You may need to source all dotfiles (you can do this using `reload!`) and restart iTerm for changes to take effect.
+
+----------------------------------------------
 
 #### Jupyter
 If you use Jupyter Notebooks and would like my custom configuration:
@@ -77,21 +84,25 @@ cp -R ~/.my-dotfiles/jupyter/* ~/.jupyter/
 
 #### TODO
 - [ ] Automatically set up Git (SSH keygen, name, username)
-- [ ] Move change shell command to end of script
 - [ ] Add terminal colors to term database after change shell cmd
 
 ----------------------------------------------
 
 #### Testing
-The `install.sh` script was last tested on macOS Mojave on Jan 14, 2019.
+The `install.sh` script was last tested on macOS Big Sur on Jan 26, 2021.
 
 ----------------------------------------------
 
-#### Productivity
-[iTerm macOS Terminal Replacement](https://www.iterm2.com/downloads.html)
-[Make Your Address Bar Default to I'm Feeling Lucky](https://productforums.google.com/forum/#!topic/chrome/8FS4pYxfxj0)
-[Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en)
-[Aerial Screensavers](https://github.com/JohnCoates/Aerial)
+#### Productivity & Aesthetics
+* For macOS, in System Preferences:
+  * Keyboard -> Set Key Repeat to "Fast", Set Delay Until Repeat to "Short"
+  * Trackpad -> Increase Tracking Speed
+  * Desktop & Screensaver -> Hot Corners -> Set top left to "Put Display to Sleep"
+  * Security & Privacy -> General -> Require password immediately after sleep or screensaver begins
+* [iTerm macOS Terminal Replacement](https://www.iterm2.com/downloads.html)
+* [Make Your Address Bar Default to I'm Feeling Lucky](https://productforums.google.com/forum/#!topic/chrome/8FS4pYxfxj0)
+* [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en)
+* [Aerial Screensavers](https://github.com/JohnCoates/Aerial)
 
 ----------------------------------------------
 
