@@ -29,6 +29,7 @@ alias gc='git commit -m'
 alias gp='git push -u origin master'
 alias gd='git diff --color | diff-so-fancy'
 alias gs='git status'
+alias gmr='git push -u origin HEAD'
 alias gpl='git pull --rebase origin master'
 alias g-discard-local='git reset --hard origin/master'
 
