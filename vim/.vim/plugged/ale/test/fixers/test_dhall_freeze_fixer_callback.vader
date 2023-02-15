@@ -7,7 +7,7 @@ Before:
   let g:ale_dhall_options = '--ascii'
   let g:ale_dhall_freeze_options = '--all'
 
-  call ale#assert#SetUpFixerTest('dhall-freeze', 'dhall-freeze')
+  call ale#assert#SetUpFixerTest('dhall', 'dhall-freeze')
 
 After:
   call ale#assert#TearDownFixerTest()
@@ -16,9 +16,7 @@ Execute(The dhall-freeze callback should return the correct options):
   AssertFixer
   \ {
   \   'command': ale#Escape('odd-dhall')
-  \     . ' --ascii'
-  \     . ' freeze'
-  \     . ' --all'
-  \     . ' --inplace %t',
-  \   'read_temporary_file': 1,
+  \       . ' --ascii'
+  \       . ' freeze'
+  \       . ' --all'
   \ }

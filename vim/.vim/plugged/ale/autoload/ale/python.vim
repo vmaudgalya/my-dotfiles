@@ -1,7 +1,8 @@
-" Author: w0rp <devw0rp@gmail.com>
+" Author: w0rp <dev@w0rp.com>
 " Description: Functions for integrating with Python linters.
 
 call ale#Set('python_auto_pipenv', '0')
+call ale#Set('python_auto_poetry', '0')
 
 let s:sep = has('win32') ? '\' : '/'
 " bin is used for Unix virtualenv directories, and Scripts is for Windows.
@@ -23,17 +24,22 @@ function! ale#python#FindProjectRootIni(buffer) abort
         \|| filereadable(l:path . '/setup.cfg')
         \|| filereadable(l:path . '/pytest.ini')
         \|| filereadable(l:path . '/tox.ini')
+        \|| filereadable(l:path . '/.pyre_configuration.local')
         \|| filereadable(l:path . '/mypy.ini')
+        \|| filereadable(l:path . '/.mypy.ini')
         \|| filereadable(l:path . '/pycodestyle.cfg')
         \|| filereadable(l:path . '/.flake8')
         \|| filereadable(l:path . '/.flake8rc')
         \|| filereadable(l:path . '/pylama.ini')
         \|| filereadable(l:path . '/pylintrc')
         \|| filereadable(l:path . '/.pylintrc')
+        \|| filereadable(l:path . '/pyrightconfig.json')
+        \|| filereadable(l:path . '/pyrightconfig.toml')
         \|| filereadable(l:path . '/Pipfile')
         \|| filereadable(l:path . '/Pipfile.lock')
         \|| filereadable(l:path . '/poetry.lock')
         \|| filereadable(l:path . '/pyproject.toml')
+        \|| filereadable(l:path . '/.tool-versions')
             return l:path
         endif
     endfor
@@ -88,6 +94,24 @@ function! ale#python#FindVirtualenv(buffer) abort
     endfor
 
     return $VIRTUAL_ENV
+endfunction
+
+" Automatically determine virtualenv environment variables and build
+" a string of them to prefix linter commands with.
+function! ale#python#AutoVirtualenvEnvString(buffer) abort
+    let l:venv_dir = ale#python#FindVirtualenv(a:buffer)
+    let l:pathsep = has('win32') ? ';' : ':'
+
+    if !empty(l:venv_dir)
+        let l:vars = [
+        \   ['PATH', l:venv_dir . s:sep . s:bin_dir . l:pathsep . $PATH],
+        \]
+
+        " We don't need a space between var as ale#Env adds one.
+        return join(map(l:vars, 'ale#Env(v:val[0], v:val[1])'), '')
+    endif
+
+    return ''
 endfunction
 
 " Given a buffer number and a command name, find the path to the executable.
@@ -156,4 +180,9 @@ endfunction
 " Detects whether a pipenv environment is present.
 function! ale#python#PipenvPresent(buffer) abort
     return findfile('Pipfile.lock', expand('#' . a:buffer . ':p:h') . ';') isnot# ''
+endfunction
+
+" Detects whether a poetry environment is present.
+function! ale#python#PoetryPresent(buffer) abort
+    return findfile('poetry.lock', expand('#' . a:buffer . ':p:h') . ';') isnot# ''
 endfunction
