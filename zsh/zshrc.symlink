@@ -56,9 +56,9 @@ fi
 
 if [ -z ${DOTFILES_LOADED+x} ]; then
     # install zsh-syntax-highlighting
-    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     # install zsh autosuggestions
-    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Add system python
@@ -81,3 +81,22 @@ ZSH_HIGHLIGHT_STYLES[globbing]=fg=magenta,bold
 
 DOTFILES_LOADED=1
 # export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/vmaudgalya/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/vmaudgalya/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/vmaudgalya/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/vmaudgalya/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# The base environment is not activated by default
+conda config --set auto_activate_base False
+

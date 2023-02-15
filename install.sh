@@ -5,7 +5,7 @@ echo "Installing dotfiles"
 source install/link.sh
 
 if [ "$(uname)" == "Darwin" ]; then
-    echo -e "\n\nRunning on OSX"
+    echo -e "\n\nRunning on macOS"
 
     source install/brew.sh
 

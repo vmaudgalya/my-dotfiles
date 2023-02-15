@@ -89,7 +89,7 @@ cp -R ~/.my-dotfiles/jupyter/* ~/.jupyter/
 ----------------------------------------------
 
 #### Testing
-The `install.sh` script was last tested on macOS Big Sur on Jan 26, 2021.
+The `install.sh` script was last tested on macOS Ventura 13.2.1 on Feb 14, 2023.
 
 ----------------------------------------------
 
