@@ -37,7 +37,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 
 " Fuzzy file
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug '/opt/homebrew/bin/fzf' | Plug 'junegunn/fzf.vim'
 
 " Repeatable Plugin commands
 Plug 'tpope/vim-repeat'

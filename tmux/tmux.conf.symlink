@@ -93,7 +93,7 @@ bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
 # Fix 'open' command from tmux
-set -g default-command "reattach-to-user-namespace -l /usr/local/bin/zsh"
+set -g default-command "reattach-to-user-namespace -l /opt/homebrew/bin/zsh"
 
 ##############################
 ### Color & Style Settings ###
